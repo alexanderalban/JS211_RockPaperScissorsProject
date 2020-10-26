@@ -17,6 +17,27 @@ const rockPaperScissors = (hand1, hand2) => {
   // Write code here
   // Use the unit test to see what is expected
 
+  if (hand1 === hand2) {
+    return "It's a tie!"
+  } else if (hand1 = "rock") {
+    if (hand2 = "scissors") {
+      return "Hand one wins!"
+    } else if (hand2 = "paper") {
+      return "Hand two wins!"
+    }
+  } else if (hand1 = "paper") {
+    if (hand2 = "rock") {
+      return "Hand one wins!"
+    } else if (hand2 = "scissors") {
+      return "Hand two wins!"
+    }
+  } else if (hand1 = "scissors") {
+    if (hand2 = "paper") {
+      return "Hand one wins!"
+    } else if (hand2 = "rock") {
+      return "Hand two wins!"
+    }
+  }
 }
 
 // the first function called in the program to get an input from the user
@@ -36,7 +57,8 @@ function getPrompt() {
 // to close them ctrl + C
 if (typeof describe === 'function') {
 
-  // most are notes for human eyes to read, but essentially passes in inputs then compares if the function you built return the expected output.
+  // most are notes for human eyes to read, but essentially passes in inputs then compares 
+  //if the function you built return the expected output.
   describe('#rockPaperScissors()', () => {
     it('should detect a tie', () => {
       assert.equal(rockPaperScissors('rock', 'rock'), "It's a tie!");
