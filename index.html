@@ -11,7 +11,7 @@
       <h1>Rock! Paper! Scissors!</h1>
     </header>
     <main>
-      <section id="player-one-section">
+      <section class="player-section" id="player-one-section">
         <h2 class="player-name">
           Player 1
         </h2>
@@ -19,7 +19,7 @@
         <label for="p1-selection">Type Rock, Paper, or Scissors!</label><br>
         <input type="text" id="p1-selection" name="p1-selection">
       </section>
-      <section id="player-one-section">
+      <section class="player-section" id="player-two-section">
         <h2 class="player-name">
           Player 2
         </h2>
@@ -27,8 +27,10 @@
         <label for="p2-selection">Type Rock, Paper, or Scissors!</label><br>
         <input type="text" id="p2-selection" name="p2-selection">
       </section>
-      <button onclick="rockPaperScissors()">Go!</button>
-      <section id="display-element"></section>
+      <section id="result-section">
+        <button onclick="rockPaperScissors()">Go!</button>
+        <section id="display-element"></section>
+      </section>
     </main>
   </body>
 </html>
