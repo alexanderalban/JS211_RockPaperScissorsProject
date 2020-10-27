@@ -8,11 +8,42 @@ const rockPaperScissors = (hand1, hand2) => {
 
   // Write code here
   // Use the unit test to see what is expected
-hand1 = document.getElementById("p1-selection").value.toLowerCase().trim();
-hand2 = document.getElementById("p2-selection").value.toLowerCase().trim();
 
+// Comment back in to pass test!
 // hand1 = hand1.toLowerCase().trim();
 // hand2 = hand2.toLowerCase().trim();
+
+// if (hand1 === hand2) {
+//   return "It's a tie!"
+// } else if (hand1 === "rock") {
+//   if (hand2 === "scissors") {
+//     return "Hand one wins!"
+//   } else if (hand2 = "paper") {
+//     return "Hand two wins!"
+//   }
+// } else if (hand1 === "paper") {
+//   if (hand2 === "rock") {
+//     return "Hand one wins!"
+//   } else if (hand2 === "scissors") {
+//     return "Hand two wins!"
+//   }
+// } else if (hand1 === "scissors") {
+//   if (hand2 === "paper") {
+//     return "Hand one wins!"
+//   } else if (hand2 = "rock") {
+//     return "Hand two wins!"
+//   }
+// } else {
+//   return "Someone didn't throw down! Try again!"
+// }
+// }
+
+
+
+//Comment out to pass test! This version allows the site to use input DOM data for the game. 
+hand1 = document.getElementById("p1-selection").value.toLowerCase().trim();
+hand2 = document.getElementById("p2-selection").value.toLowerCase().trim();
+//
 
   if (hand1 === hand2) {
     document.getElementById("display-result").innerHTML = "It's a tie!"
