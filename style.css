@@ -49,6 +49,7 @@ input {
 .hand-image {
   max-height: 400px;
   max-width: auto;
+  transition: 0.3s ease-in-out;
 }
 
 #result-section {
@@ -70,6 +71,12 @@ button {
   font-size: 20pt;
   box-shadow: 0px 0px 10pt 1pt black;
   margin-top: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: grey;
+  transform: scale(1.2);
 }
 
 #display-result {

@@ -1,3 +1,4 @@
+/* Tablet Settings */
 @media (max-width: 800px) {
   input {
     font-size: 14pt;
@@ -12,6 +13,7 @@
   }
 }
 
+/* Phone Settings */
 @media (max-width: 600px) {
   header {
     font-size: 16pt;
