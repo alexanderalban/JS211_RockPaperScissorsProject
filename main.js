@@ -9,7 +9,8 @@ const rockPaperScissors = (hand1, hand2) => {
   // Write code here
   // Use the unit test to see what is expected
 
-// Comment back in to pass test!
+// COMMENT BACK IN TO PASS TEST! Cut down, terminal code. COMMENT OUT THE VERSION BELOW TO PASS TEST
+
 // hand1 = hand1.toLowerCase().trim();
 // hand2 = hand2.toLowerCase().trim();
 
@@ -40,10 +41,9 @@ const rockPaperScissors = (hand1, hand2) => {
 
 
 
-//Comment out to pass test! This version allows the site to use input DOM data for the game. 
+//COMMENT OUT TO PASS TEST! This version allows the site to use input DOM data for the game. 
 hand1 = document.getElementById("p1-selection").value.toLowerCase().trim();
 hand2 = document.getElementById("p2-selection").value.toLowerCase().trim();
-//
 
   if (hand1 === hand2) {
     document.getElementById("display-result").innerHTML = "It's a tie!"
@@ -85,6 +85,8 @@ hand2 = document.getElementById("p2-selection").value.toLowerCase().trim();
     document.getElementById("display-result").innerHTML = "Someone didn't throw down! Try again!"
     return "Someone didn't throw down! Try again!"
   }
+
+
 }
 
 
