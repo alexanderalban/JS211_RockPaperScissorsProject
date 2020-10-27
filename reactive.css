@@ -1,0 +1,36 @@
+@media (max-width: 800px) {
+  input {
+    font-size: 14pt;
+  }
+
+  .hand-image {
+    max-height: 300px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: 16pt;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #player-one-section,
+  #player-two-section,
+  #result-section {
+    grid-column: 1 / 2;
+    font-size: 12pt;
+  }
+
+  #left-hand,
+  #right-hand {
+    transform: rotate(90deg);
+    max-height: 200px;
+  }
+}
