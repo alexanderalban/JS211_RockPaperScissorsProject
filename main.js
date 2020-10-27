@@ -1,6 +1,55 @@
 // uses strict mode so strings are not coerced, variables are not hoisted, etc... 
 'use strict';
 
+
+
+// the function that will be called by the unit test below
+const rockPaperScissors = (hand1, hand2) => {
+
+  // Write code here
+  // Use the unit test to see what is expected
+hand1 = document.getElementById("p1-selection").value.toLowerCase().trim();
+hand2 = document.getElementById("p2-selection").value.toLowerCase().trim();
+
+// hand1 = hand1.toLowerCase().trim();
+// hand2 = hand2.toLowerCase().trim();
+
+  if (hand1 === hand2) {
+    document.getElementById("display-result").innerHTML = "It's a tie!"
+    return "It's a tie!"
+  } else if (hand1 === "rock") {
+    if (hand2 === "scissors") {
+      document.getElementById("display-result").innerHTML = "Player 1 Wins!"
+      return "Hand one wins!"
+    } else if (hand2 = "paper") {
+      document.getElementById("display-result").innerHTML = "Player 2 Wins!"
+      return "Hand two wins!"
+    }
+  } else if (hand1 === "paper") {
+    if (hand2 === "rock") {
+      document.getElementById("display-result").innerHTML = "Player 1 Wins!"
+      return "Hand one wins!"
+    } else if (hand2 === "scissors") {
+      document.getElementById("display-result").innerHTML = "Player 2 Wins!"
+      return "Hand two wins!"
+    }
+  } else if (hand1 === "scissors") {
+    if (hand2 === "paper") {
+      document.getElementById("display-result").innerHTML = "Player 1 Wins!"
+      return "Hand one wins!"
+    } else if (hand2 = "rock") {
+      document.getElementById("display-result").innerHTML = "Player 2 Wins!"
+      return "Hand two wins!"
+    }
+  } else {
+    document.getElementById("display-result").innerHTML = "Someone didn't throw down! Try again!"
+    return "Someone didn't throw down! Try again!"
+  }
+}
+
+
+
+
 // brings in the assert module for unit testing
 const assert = require('assert');
 // brings in the readline module to access the command line
@@ -11,36 +60,12 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-// the function that will be called by the unit test below
-const rockPaperScissors = (hand1, hand2) => {
 
-  // Write code here
-  // Use the unit test to see what is expected
-hand1 = hand1.toLowerCase().trim();
-hand2 = hand2.toLowerCase().trim();
 
-  if (hand1 === hand2) {
-    return "It's a tie!"
-  } else if (hand1 === "rock") {
-    if (hand2 === "scissors") {
-      return "Hand one wins!"
-    } else if (hand2 = "paper") {
-      return "Hand two wins!"
-    }
-  } else if (hand1 === "paper") {
-    if (hand2 === "rock") {
-      return "Hand one wins!"
-    } else if (hand2 === "scissors") {
-      return "Hand two wins!"
-    }
-  } else if (hand1 === "scissors") {
-    if (hand2 === "paper") {
-      return "Hand one wins!"
-    } else if (hand2 = "rock") {
-      return "Hand two wins!"
-    }
-  }
-}
+
+
+
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="main.js"></script>
   </head>
   <body>
@@ -15,7 +16,7 @@
         <h2 class="player-name">
           Player 1
         </h2>
-        <img src="." alt="A hand, ready to play Rock Paper Scissors">
+        <img class="hand-image" src="./images/hand-rock.png" alt="A hand, ready to play Rock Paper Scissors"><br>
         <label for="p1-selection">Type Rock, Paper, or Scissors!</label><br>
         <input type="text" id="p1-selection" name="p1-selection">
       </section>
@@ -23,13 +24,13 @@
         <h2 class="player-name">
           Player 2
         </h2>
-        <img src="." alt="A hand, ready to play Rock Paper Scissors">
+        <img class="hand-image" src="./images/hand-rock-player-two.png" alt="A hand, ready to play Rock Paper Scissors"><br>
         <label for="p2-selection">Type Rock, Paper, or Scissors!</label><br>
         <input type="text" id="p2-selection" name="p2-selection">
       </section>
       <section id="result-section">
         <button onclick="rockPaperScissors()">Go!</button>
-        <section id="display-element"></section>
+        <section id="display-result"></section>
       </section>
     </main>
   </body>
