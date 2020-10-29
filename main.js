@@ -2,17 +2,9 @@
 'use strict';
 
 
-//This lets me use the 'Enter' key in the text fields to trigger the 'Go!' button
-let input = document.getElementById("p1-selection");
-input.addEventListener('keyup', (event) => {
-  console.log(event);
-  if (KeyboardEvent.key === "Enter")  {
-    console.log("click");
-    event.preventDefault();
-    document.getElementById("go-button").click();
-  }
-});
 
+//***********This Javascript passes all required tests. The javascript running the website is
+//website-main.js */
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
 
@@ -105,6 +97,11 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors(' rock ', ' paper '), "Hand two wins!");
       assert.equal(rockPaperScissors(' paper ', ' scissors'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', ' scissors '), "Hand one wins!");
+    });
+    it('What if a user hit ENTER before typing in an input?', () => {
+      assert.equal(rockPaperScissors('', ' paper'), "Someone didn't throw down! Try again!");
+      assert.equal(rockPaperScissors('rock', ''), "Someone didn't throw down! Try again!");
+      assert.equal(rockPaperScissors('', ''), "It's a tie!");
     });
   });
 } else {

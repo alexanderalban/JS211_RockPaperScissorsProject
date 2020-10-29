@@ -1,3 +1,9 @@
+///******This javascript runs the front-end site. The main.js passes all tests. */
+
+
+///Allows "Enter" to activate the "Go!" button in the text fields
+
+
 let textfield = document.getElementById('p1-selection');
 textfield.addEventListener('keyup', (event) => {
   if (event.key === 'Enter')  {
@@ -16,6 +22,8 @@ textfield2.addEventListener('keyup', (event) => {
   }
 });
 
+
+////Main Code, runs the game/hands
 
 const rockPaperScissors = (hand1, hand2) => {
 
