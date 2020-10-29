@@ -2,6 +2,16 @@
 'use strict';
 
 
+//This lets me use the 'Enter' key in the text fields to trigger the 'Go!' button
+let input = document.getElementById("p1-selection");
+input.addEventListener('keyup', (event) => {
+  console.log(event);
+  if (KeyboardEvent.key === "Enter")  {
+    console.log("click");
+    event.preventDefault();
+    document.getElementById("go-button").click();
+  }
+});
 
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
@@ -9,84 +19,34 @@ const rockPaperScissors = (hand1, hand2) => {
   // Write code here
   // Use the unit test to see what is expected
 
-// COMMENT BACK IN TO PASS TEST! Cut down, terminal code. COMMENT OUT THE VERSION BELOW TO PASS TEST
+hand1 = hand1.toLowerCase().trim();
+hand2 = hand2.toLowerCase().trim();
 
-// hand1 = hand1.toLowerCase().trim();
-// hand2 = hand2.toLowerCase().trim();
-
-// if (hand1 === hand2) {
-//   return "It's a tie!"
-// } else if (hand1 === "rock") {
-//   if (hand2 === "scissors") {
-//     return "Hand one wins!"
-//   } else if (hand2 = "paper") {
-//     return "Hand two wins!"
-//   }
-// } else if (hand1 === "paper") {
-//   if (hand2 === "rock") {
-//     return "Hand one wins!"
-//   } else if (hand2 === "scissors") {
-//     return "Hand two wins!"
-//   }
-// } else if (hand1 === "scissors") {
-//   if (hand2 === "paper") {
-//     return "Hand one wins!"
-//   } else if (hand2 = "rock") {
-//     return "Hand two wins!"
-//   }
-// } else {
-//   return "Someone didn't throw down! Try again!"
-// }
-// }
-
-
-
-//COMMENT OUT TO PASS TEST! This version allows the site to use input DOM data for the game. 
-hand1 = document.getElementById("p1-selection").value.toLowerCase().trim();
-hand2 = document.getElementById("p2-selection").value.toLowerCase().trim();
-
-  if (hand1 === hand2) {
-    document.getElementById("display-result").innerHTML = "It's a tie!"
-    return "It's a tie!"
-  } else if (hand1 === "rock") {
-    document.getElementById("left-hand").src ="./images/hand-rock.png";
-    if (hand2 === "scissors") {
-      document.getElementById("right-hand").src ="./images/hand-scissors-right.png";
-      document.getElementById("display-result").innerHTML = "Player 1 Wins!"
-      return "Hand one wins!"
-    } else if (hand2 = "paper") {
-      document.getElementById("right-hand").src ="./images/hand-paper-right.png";
-      document.getElementById("display-result").innerHTML = "Player 2 Wins!"
-      return "Hand two wins!"
-    }
-  } else if (hand1 === "paper") {
-    document.getElementById("left-hand").src ="./images/hand-paper-left.png";
-    if (hand2 === "rock") {
-      document.getElementById("right-hand").src ="./images/hand-rock-player-two.png";
-      document.getElementById("display-result").innerHTML = "Player 1 Wins!"
-      return "Hand one wins!"
-    } else if (hand2 === "scissors") {
-      document.getElementById("right-hand").src ="./images/hand-scissors-right.png";
-      document.getElementById("display-result").innerHTML = "Player 2 Wins!"
-      return "Hand two wins!"
-    }
-  } else if (hand1 === "scissors") {
-    document.getElementById("left-hand").src ="./images/hand-scissors-left.png";
-    if (hand2 === "paper") {
-      document.getElementById("right-hand").src ="./images/hand-paper-right.png";
-      document.getElementById("display-result").innerHTML = "Player 1 Wins!"
-      return "Hand one wins!"
-    } else if (hand2 = "rock") {
-      document.getElementById("right-hand").src ="./images/hand-rock-player-two.png";
-      document.getElementById("display-result").innerHTML = "Player 2 Wins!"
-      return "Hand two wins!"
-    }
-  } else {
-    document.getElementById("display-result").innerHTML = "Someone didn't throw down! Try again!"
-    return "Someone didn't throw down! Try again!"
+if (hand1 === hand2) {
+  return "It's a tie!"
+} else if (hand1 === "" || hand2 === "") {
+  return "Someone didn't throw down! Try again!"
+} else if (hand1 === "rock") {
+  if (hand2 === "scissors") {
+    return "Hand one wins!"
+  } else if (hand2 = "paper") {
+    return "Hand two wins!"
   }
-
-
+} else if (hand1 === "paper") {
+  if (hand2 === "rock") {
+    return "Hand one wins!"
+  } else if (hand2 === "scissors") {
+    return "Hand two wins!"
+  }
+} else if (hand1 === "scissors") {
+  if (hand2 === "paper") {
+    return "Hand one wins!"
+  } else if (hand2 = "rock") {
+    return "Hand two wins!"
+  }
+} else {
+  return "Someone didn't throw down! Try again!"
+}
 }
 
 
@@ -139,6 +99,12 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('rOcK', ' paper '), "Hand two wins!");
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
+    });
+    // ****************ADDITIONAL TESTS TO PASS! FOR PART 1: UNIT TESTS
+    it('What if a user adds a space before or after their input?', () => {
+      assert.equal(rockPaperScissors(' rock ', ' paper '), "Hand two wins!");
+      assert.equal(rockPaperScissors(' paper ', ' scissors'), "Hand two wins!");
+      assert.equal(rockPaperScissors('rock ', ' scissors '), "Hand one wins!");
     });
   });
 } else {
