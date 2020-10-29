@@ -31,7 +31,29 @@ const rockPaperScissors = (hand1, hand2) => {
   hand1 = document.getElementById("p1-selection").value.toLowerCase().trim();
   hand2 = document.getElementById("p2-selection").value.toLowerCase().trim();
 
-  if (hand1 === hand2) {
+  ////helps with scissor typos
+  if (
+    hand1 === "scisors" ||
+    hand1 === "sissors" ||
+    hand1 === "sisors" ||
+    hand1 === "scissor"
+  ) {
+    hand1 = "scissors";
+  }
+
+  if (
+    hand2 === "scisors" ||
+    hand2 === "sissors" ||
+    hand2 === "sisors" ||
+    hand2 === "scissor"
+  ) {
+    hand2 = "scissors";
+  }
+
+  if (hand1 === "" && hand2 === "") {
+    document.getElementById("display-result").innerHTML = "Please enter Rock, Paper, or Scissors!";
+    return "Please enter Rock, Paper, or Scissors!";
+  } else if (hand1 === hand2) {
     document.getElementById("display-result").innerHTML = "It's a tie!"
     return "It's a tie!"
   } else if (hand1 === "" || hand2 === "") {
