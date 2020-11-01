@@ -1,10 +1,15 @@
+/* Main Parallax Background */
+
 html {
   background-image: url(./images/mark-gosling-stadium-unsplash.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
+
+/* Title section */
 
 header {
   display: grid;
@@ -17,12 +22,16 @@ header {
   text-align: center;
 }
 
+/* Primary section */
+
 main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   font-family: "Press Start 2P", cursive;
 }
+
+/* Individual Player Sections */
 
 #player-one-section {
   grid-column: 1 / 2;
@@ -52,6 +61,11 @@ input {
   transition: 0.3s ease-in-out;
 }
 
+.handAnimation {
+  animation: animate__wobble;
+  animation-duration: 3s;
+}
+
 #left-hand {
   animation: slideInLeft;
   animation-duration: 0.5s;
@@ -62,18 +76,6 @@ input {
   animation-duration: 0.5s;
 }
 
-/* Animations for when the button is clicked! */
-
-/* .rollout-animation-left {
-  animation: bounceOutLeft;
-  animation-duration: 0.5s;
-}
-
-.rollout-animation-right {
-  animation: bounceOutRight;
-  animation-duration: 0.5s;
-} */
-
 #result-section {
   grid-column: 1 / 3;
   justify-self: center;
@@ -83,6 +85,8 @@ input {
   text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black,
     -1px 1px 0 black, 1px 1px 0 black;
 }
+
+/* Go button and Result Addition*/
 
 button {
   padding: 20px;

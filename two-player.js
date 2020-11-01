@@ -1,4 +1,4 @@
-///******This javascript runs the front-end site. The main.js passes all tests. */
+///******This javascript runs the front-end site for two-player. The main.js passes all tests. */
 
 
 ///Allows "Enter" to activate the "Go!" button in the text fields

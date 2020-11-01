@@ -1,4 +1,4 @@
-///******This javascript runs the front-end site. The main.js passes all tests. */
+///******This javascript runs the front-end site for single-player. The main.js passes all tests. */
 
 
 ///Allows "Enter" to activate the "Go!" button in the text fields
@@ -16,9 +16,15 @@ textfield.addEventListener('keyup', (event) => {
 
 ////Main Code, runs the game/hands
 
+let firstAnimation = () => {
+  document.getElementById("left-hand").classList.add('.handAnimation');
+  document.getElementById("right-hand").classList.add('.handAnimation');
+  console.log('do the thing');
+};
+
 const rockPaperScissors = (hand1, hand2) => {
 
-  // document.getElementById('right-hand').classList.add('rollout-animation-right');
+  // document.getElementById('right-hand').classList.add('handAnimation');
   // document.getElementById('left-hand').classList.add('rollout-animation-left');
 
 
@@ -50,7 +56,6 @@ const rockPaperScissors = (hand1, hand2) => {
   }
 
   /////
-
 
   if (hand1 === "" && hand2 === "") {
     document.getElementById("display-result").innerHTML = "Please enter Rock, Paper, or Scissors!";
