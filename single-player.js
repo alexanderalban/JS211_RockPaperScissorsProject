@@ -16,18 +16,7 @@ textfield.addEventListener('keyup', (event) => {
 
 ////Main Code, runs the game/hands
 
-let firstAnimation = () => {
-  document.getElementById("left-hand").classList.add('.handAnimation');
-  document.getElementById("right-hand").classList.add('.handAnimation');
-  console.log('do the thing');
-};
-
 const rockPaperScissors = (hand1, hand2) => {
-
-  // document.getElementById('right-hand').classList.add('handAnimation');
-  // document.getElementById('left-hand').classList.add('rollout-animation-left');
-
-
 
   hand1 = document.getElementById("p1-selection").value.toLowerCase().trim();
 
@@ -105,8 +94,5 @@ const rockPaperScissors = (hand1, hand2) => {
     document.getElementById("display-result").innerHTML = "Someone didn't throw down! Try again!"
     // return "Someone didn't throw down! Try again!"
   }
-
-  document.getElementById('right-hand').classList.remove('rollout-animation-right');
-  document.getElementById('left-hand').classList.remove('rollout-animation-left');
 
 }

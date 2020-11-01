@@ -55,15 +55,15 @@ input {
   margin-top: 20px;
 }
 
+.handAnimation {
+  animation: wobble;
+  animation-duration: 3s;
+}
+
 .hand-image {
   max-height: 400px;
   max-width: auto;
   transition: 0.3s ease-in-out;
-}
-
-.handAnimation {
-  animation: animate__wobble;
-  animation-duration: 3s;
 }
 
 #left-hand {
