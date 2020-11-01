@@ -3,35 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="select-screen.css">
     <link rel="stylesheet" href="reactive.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   </head>
   <body>
     <header>
       <h1>Rock! Paper! Scissors!</h1>
     </header>
     <main>
-      <section class="player-section" id="player-one-section">
-        <h2 class="player-name">
-          Player 1
-        </h2>
-        <img class="hand-image" id="left-hand" src="./images/hand-rock.png" alt="A hand, ready to play Rock Paper Scissors"><br>
-        <label for="p1-selection">Type Rock, Paper, or Scissors!</label><br>
-        <input type="text" id="p1-selection" name="p1-selection">
-      </section>
-      <section class="player-section" id="player-two-section">
-        <h2 class="player-name">
-          Computer
-        </h2>
-        <img class="hand-image" id="right-hand" src="./images/hand-rock-player-two.png" alt="A hand, ready to play Rock Paper Scissors"><br>
-        <!-- Commented out player two text box! might reinsert for two player mode! -->
-        <!-- <label for="p2-selection">Type Rock, Paper, or Scissors!</label><br>
-        <input type="text" id="p2-selection" name="p2-selection"> -->
-      </section>
-      <section id="result-section">
-        <button id="go-button" onclick="rockPaperScissors()">Go!</button>
-        <section id="display-result"></section>
+      <h1 id="choose-text">Select your game mode:</h1>
+      <section id="choose-mode-section">
+        <section class="link-wrapper">
+          <a class="choose-link" id="single-link" href="single-player.html">Single Player <img class="choose-hand" src= "./images/hand-rock.png"></a>
+        </section>
+        <section class="link-wrapper">
+          <a class="choose-link" id="two-link" href="two-player.html">Two Player <img class="choose-hand" src= "./images/hand-rock.png"><img class="choose-hand" src= "./images/hand-rock.png"></a>
+        </section>
       </section>
     </main>
     <script src="website-main.js"></script>

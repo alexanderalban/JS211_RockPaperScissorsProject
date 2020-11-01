@@ -1,0 +1,77 @@
+html {
+  background-image: url(./images/nikola-bikar-cutain-unsplash.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  display: grid;
+  justify-content: center;
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black,
+    -1px 1px 0 black, 1px 1px 0 black;
+  font-size: 20pt;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black,
+    -1px 1px 0 black, 1px 1px 0 black;
+}
+
+h1 {
+  margin-top: 50pt;
+  text-align: center;
+}
+
+#choose-mode-section {
+  margin-top: 230pt;
+  height: auto;
+  transition: 0.3 ease-in-out;
+}
+
+.link-wrapper {
+  margin-top: 25pt;
+  transition: 0.3 ease-in-out;
+}
+
+.link-wrapper:hover {
+  animation: shakeY;
+  animation-duration: 2s;
+}
+
+.choose-link {
+  text-decoration: none;
+  color: white;
+  font-size: 24pt;
+  margin: 20pt;
+  transition: 0.3 ease-in-out;
+}
+#single-link {
+  transition: 0.3 ease-in-out;
+}
+
+#single-link:hover {
+  color: maroon;
+}
+
+#two-link {
+  margin-top: 25pt;
+  transition: 0.3 ease-in-out;
+}
+
+#two-link:hover {
+  color: rgb(27, 152, 243);
+}
+
+.choose-hand {
+  max-height: 24pt;
+}

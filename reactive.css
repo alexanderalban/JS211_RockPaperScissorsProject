@@ -35,4 +35,8 @@
     transform: rotate(90deg);
     max-height: 200px;
   }
+
+  .choose-link {
+    font-size: 20pt;
+  }
 }
