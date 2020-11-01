@@ -51,6 +51,8 @@ const rockPaperScissors = (hand1, hand2) => {
     document.getElementById("display-result").innerHTML = "Please enter Rock, Paper, or Scissors!";
     return "Please enter Rock, Paper, or Scissors!";
   } else if (hand1 === hand2) {
+    document.getElementById("right-hand").src = "./images/thumbs-up-right.png";
+    document.getElementById("left-hand").src = "./images/thumbs-up-left.png";
     document.getElementById("display-result").innerHTML = "It's a tie!"
     return "It's a tie!"
   } else if (hand1 === "" || hand2 === "") {
