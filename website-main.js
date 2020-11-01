@@ -13,15 +13,6 @@ textfield.addEventListener('keyup', (event) => {
   }
 });
 
-let textfield2 = document.getElementById('p2-selection');
-textfield2.addEventListener('keyup', (event) => {
-  if (event.key === 'Enter') {
-    console.log("click");
-    event.preventDefault();
-    document.getElementById("go-button").click();
-  }
-});
-
 
 ////Main Code, runs the game/hands
 
@@ -29,7 +20,11 @@ const rockPaperScissors = (hand1, hand2) => {
 
 
   hand1 = document.getElementById("p1-selection").value.toLowerCase().trim();
-  hand2 = document.getElementById("p2-selection").value.toLowerCase().trim();
+
+  //hand2 now running on AI! aiArray is all of the possible moves, and hand2 uses a randomizer to
+  //select which one to throw. Since RPS is pure chance, this works.
+  let aiArray = ['rock', 'paper', 'scissors'];
+  hand2 = aiArray[Math.floor(Math.random() * aiArray.length)];
 
   ////helps with scissor typos
   if (
@@ -49,6 +44,8 @@ const rockPaperScissors = (hand1, hand2) => {
   ) {
     hand2 = "scissors";
   }
+
+  /////
 
   if (hand1 === "" && hand2 === "") {
     document.getElementById("display-result").innerHTML = "Please enter Rock, Paper, or Scissors!";
