@@ -48,51 +48,59 @@ const rockPaperScissors = (hand1, hand2) => {
 
   if (hand1 === "" && hand2 === "") {
     document.getElementById("display-result").innerHTML = "Please enter Rock, Paper, or Scissors!";
-    // return "Please enter Rock, Paper, or Scissors!";
+    return "Please enter Rock, Paper, or Scissors!";
+  } else if (hand1 === "lizard" ||
+    hand1 === "spock" ||
+    hand2 === "lizard" ||
+    hand2 === "spock") {
+    document.getElementById("right-hand").src = "./images/spock-hand.png";
+    document.getElementById("left-hand").src = "./images/spock-hand.png";
+    document.getElementById("display-result").innerHTML = "Nice try! Please enter Rock, Paper, or Scissors."
+    return "We keep it old school here! Please enter Rock, Paper, or Scissors."
   } else if (hand1 === hand2) {
     document.getElementById("right-hand").src = "./images/thumbs-up-right.png";
     document.getElementById("left-hand").src = "./images/thumbs-up-left.png";
     document.getElementById("display-result").innerHTML = "It's a tie!"
-    // return "It's a tie!"
+    return "It's a tie!"
   } else if (hand1 === "" || hand2 === "") {
     document.getElementById("display-result").innerHTML = "Someone didn't throw down! Try again!"
-    // return "Someone didn't throw down! Try again!"
+    return "Someone didn't throw down! Try again!"
   } else if (hand1 === "rock") {
     document.getElementById("left-hand").src = "./images/hand-rock.png";
     if (hand2 === "scissors") {
       document.getElementById("right-hand").src = "./images/hand-scissors-right.png";
       document.getElementById("display-result").innerHTML = "Player 1 Wins!"
-      // return "Hand one wins!"
+      return "Hand one wins!"
     } else if (hand2 = "paper") {
       document.getElementById("right-hand").src = "./images/hand-paper-right.png";
       document.getElementById("display-result").innerHTML = "Player 2 Wins!"
-      // return "Hand two wins!"
+      return "Hand two wins!"
     }
   } else if (hand1 === "paper") {
     document.getElementById("left-hand").src = "./images/hand-paper-left.png";
     if (hand2 === "rock") {
       document.getElementById("right-hand").src = "./images/hand-rock-player-two.png";
       document.getElementById("display-result").innerHTML = "Player 1 Wins!"
-      // return "Hand one wins!"
+      return "Hand one wins!"
     } else if (hand2 === "scissors") {
       document.getElementById("right-hand").src = "./images/hand-scissors-right.png";
       document.getElementById("display-result").innerHTML = "Player 2 Wins!"
-      // return "Hand two wins!"
+      return "Hand two wins!"
     }
   } else if (hand1 === "scissors") {
     document.getElementById("left-hand").src = "./images/hand-scissors-left.png";
     if (hand2 === "paper") {
       document.getElementById("right-hand").src = "./images/hand-paper-right.png";
       document.getElementById("display-result").innerHTML = "Player 1 Wins!"
-      // return "Hand one wins!"
+      return "Hand one wins!"
     } else if (hand2 = "rock") {
       document.getElementById("right-hand").src = "./images/hand-rock-player-two.png";
       document.getElementById("display-result").innerHTML = "Player 2 Wins!"
-      // return "Hand two wins!"
+      return "Hand two wins!"
     }
   } else {
     document.getElementById("display-result").innerHTML = "Someone didn't throw down! Try again!"
-    // return "Someone didn't throw down! Try again!"
+    return "Someone didn't throw down! Try again!"
   }
 
-}
+};

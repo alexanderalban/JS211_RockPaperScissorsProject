@@ -32,6 +32,11 @@ const rockPaperScissors = (hand1, hand2) => {
 
   if (hand1 === "" && hand2 === "") {
     return "Please enter Rock, Paper, or Scissors!";
+  } else if (hand1 === "lizard" ||
+    hand1 === "spock" ||
+    hand2 === "lizard" ||
+    hand2 === "spock") {
+    return "We keep it old school here! Please enter Rock, Paper, or Scissors."
   } else if (hand1 === hand2) {
     return "It's a tie!";
   } else if (hand1 === "" || hand2 === "") {
@@ -39,7 +44,7 @@ const rockPaperScissors = (hand1, hand2) => {
   } else if (hand1 === "rock") {
     if (hand2 === "scissors") {
       return "Hand one wins!";
-    } else if ((hand2 = "paper")) {
+    } else if (hand2 = "paper") {
       return "Hand two wins!";
     }
   } else if (hand1 === "paper") {
@@ -51,7 +56,7 @@ const rockPaperScissors = (hand1, hand2) => {
   } else if (hand1 === "scissors") {
     if (hand2 === "paper") {
       return "Hand one wins!";
-    } else if ((hand2 = "rock")) {
+    } else if (hand2 = "rock") {
       return "Hand two wins!";
     }
   } else {
@@ -118,6 +123,11 @@ if (typeof describe === "function") {
       assert.equal(rockPaperScissors("scisors", "sissors"), "It's a tie!");
       assert.equal(rockPaperScissors("sisors", "scissor"), "It's a tie!");
       assert.equal(rockPaperScissors("sisors", "rock"), "Hand two wins!");
+    });
+    it("What if the user enters the newer variations 'lizard' or 'spock'?", () => {
+      assert.equal(rockPaperScissors("lizard", "spock"), "We keep it old school here! Please enter Rock, Paper, or Scissors.");
+      assert.equal(rockPaperScissors("spock", "lizard"), "We keep it old school here! Please enter Rock, Paper, or Scissors.");
+      assert.equal(rockPaperScissors("spock", "spock"), "We keep it old school here! Please enter Rock, Paper, or Scissors.");
     });
   });
 } else {
